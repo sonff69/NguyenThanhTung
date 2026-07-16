@@ -13,7 +13,7 @@
         :root {
             --bg-color: #050505;
             --text-color: #ffffff;
-            --accent-color: #dfdbd4; /* Màu champagne tối giản quý phái */
+            --accent-color: #dfdbd4; /* Champagne ấm áp và sang trọng */
             --muted-color: #808080;
             --border-color: rgba(255, 255, 255, 0.08);
             --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -34,7 +34,7 @@
             overflow-x: hidden;
         }
 
-        /* Tối ưu hóa thanh cuộn */
+        /* Thanh cuộn tối giản */
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -48,7 +48,7 @@
             background: var(--accent-color);
         }
 
-        /* Con trỏ tối giản */
+        /* Con trỏ tùy biến */
         .custom-cursor {
             width: 6px;
             height: 6px;
@@ -68,13 +68,25 @@
             border: 1px solid var(--accent-color);
         }
 
+        /* Định vị khung giới hạn nội dung tránh tràn viền sát lề */
+        .container-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 8%;
+        }
+
+        section {
+            width: 100%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 30px 6%;
+            padding: 30px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -154,18 +166,12 @@
             50% { opacity: 0.6; transform: translateY(8px); }
         }
 
-        /* Section Layout */
-        .section-padding {
-            padding: 140px 8%;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* Text lớn cách điệu, line-height 1.2 tránh lỗi lỗi hiển thị tiếng Việt */
+        /* Typography */
         .huge-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(2.5rem, 6vw, 6rem);
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.25;
             text-transform: uppercase;
             letter-spacing: -2px;
             margin-bottom: 60px;
@@ -186,7 +192,7 @@
             padding-left: 15px;
         }
 
-        /* Grid Bố cục */
+        /* Bố cục Grid */
         .grid-2 {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -201,10 +207,6 @@
         }
 
         /* Portfolio Objectives */
-        .objectives-container {
-            margin-bottom: 60px;
-        }
-
         .objective-item {
             padding: 25px 0;
             border-bottom: 1px solid var(--border-color);
@@ -224,7 +226,7 @@
             color: var(--muted-color);
         }
 
-        /* Projects Section */
+        /* Projects List */
         .projects-header {
             display: flex;
             justify-content: space-between;
@@ -232,25 +234,6 @@
             margin-bottom: 80px;
             flex-wrap: wrap;
             gap: 40px;
-        }
-
-        .drive-callout {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid var(--border-color);
-            padding: 14px 28px;
-            transition: var(--transition-smooth);
-        }
-
-        .drive-callout:hover {
-            border-color: var(--text-color);
-            transform: translateY(-2px);
         }
 
         .project-list {
@@ -351,9 +334,9 @@
             margin-top: 0;
         }
 
-        /* --- INTERACTIVE GRAPHICS / ILLUSTRATIONS --- */
+        /* --- INTERACTIVE DESIGNS --- */
         
-        /* Interactive Slider (Project 1) */
+        /* Step Slider (Bài 1) */
         .slider-container {
             background: #000;
             padding: 30px;
@@ -407,7 +390,7 @@
             color: var(--accent-color);
         }
 
-        /* Filterable Sources Table (Project 2) */
+        /* Table (Bài 2) */
         .table-container {
             margin-top: 25px;
             border: 1px solid var(--border-color);
@@ -453,7 +436,7 @@
             letter-spacing: 1px;
         }
 
-        /* Prompt Sandbox (Project 3) */
+        /* Prompt Sandbox (Bài 3) */
         .sandbox-container {
             border: 1px solid var(--border-color);
             background: #000;
@@ -513,7 +496,7 @@
             white-space: pre-wrap;
         }
 
-        /* Trello Kanban Board (Project 4) */
+        /* Trello Kanban Board (Bài 4) */
         .kanban-board {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -542,14 +525,13 @@
             margin-bottom: 10px;
             font-size: 0.8rem;
             line-height: 1.5;
-            cursor: grab;
             transition: var(--transition-smooth);
         }
         .kanban-card:hover {
             border-color: var(--text-color);
         }
 
-        /* Infographic Explorer (Project 5) */
+        /* Infographic Explorer (Bài 5) */
         .info-explorer {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -601,7 +583,7 @@
             margin-bottom: 10px;
         }
 
-        /* Policy Comparator (Project 6) */
+        /* Policy Grid (Bài 6) */
         .policy-comparator {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -639,28 +621,86 @@
             color: var(--accent-color);
         }
 
-        /* Total Reflection Container */
+        /* --- PREMIUM NEW FOOTER DESIGN --- */
+        footer {
+            background-color: #030303;
+            width: 100%;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--text-color);
+            margin-bottom: 25px;
+        }
+
+        .footer-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: var(--muted-color);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-nav a:hover {
+            color: var(--text-color);
+            padding-left: 5px;
+        }
+
         .total-reflection {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 60px;
         }
+
         .reflection-card {
-            border-top: 1px solid var(--border-color);
-            padding-top: 25px;
+            border-left: 1px solid var(--border-color);
+            padding-left: 25px;
         }
+
         .reflection-card-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 15px;
             color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         .reflection-card-desc {
             font-size: 0.9rem;
             line-height: 1.7;
             color: var(--muted-color);
+        }
+
+        .copyright {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 40px;
+            color: var(--muted-color);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         /* CSS Animation Scroll Reveal */
@@ -677,9 +717,9 @@
 
         /* Reponsive */
         @media (max-width: 1024px) {
-            .grid-2, .grid-3, .detail-grid, .kanban-board, .info-explorer, .policy-comparator, .total-reflection {
+            .grid-2, .grid-3, .detail-grid, .kanban-board, .info-explorer, .policy-comparator, .total-reflection, .footer-top {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
             .detail-meta-list {
                 border-right: none;
@@ -690,6 +730,12 @@
             .project-row {
                 grid-template-columns: 1fr;
                 gap: 15px;
+            }
+            .reflection-card {
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+                padding-left: 0;
+                padding-top: 25px;
             }
             nav {
                 padding: 20px 4%;
@@ -723,252 +769,255 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-padding scroll-reveal">
-        <h2 class="huge-title">Khám Phá<span>Bản Thân Tôi</span></h2>
-        
-        <div class="grid-2">
-            <div class="profile-intro">
-                Chào bạn! Tôi là <strong>Nguyễn Thanh Tùng</strong>, sinh viên chuyên ngành <strong>Ngôn ngữ và Văn hóa Trung Quốc</strong> tại Trường Đại học Ngoại ngữ - ĐHQGHN [1]. 
-                Dưới kỷ nguyên bùng nổ của trí tuệ nhân tạo, tôi tin rằng năng lực của một nhà nghiên cứu ngôn ngữ không chỉ nằm ở việc thông thạo từ vựng, ngữ pháp, mà còn nằm ở sự nhạy bén và liêm chính khi làm chủ các công nghệ số hóa mới. 
-                <br><br>
-                Học phần <strong>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</strong> đã trang bị cho tôi tấm bản đồ vững chắc để khai phá dòng chảy công nghệ này một cách có hệ thống, minh bạch và hiệu quả nhất [1].
-            </div>
+    <section id="about">
+        <div class="container-inner scroll-reveal">
+            <h2 class="huge-title">Khám Phá<span>Bản Thân Tôi</span></h2>
             
-            <div class="profile-details">
-                <div class="detail-item">
-                    <div class="detail-label">Sinh viên thực hiện</div>
-                    <div class="detail-value">Nguyễn Thanh Tùng (MSSV: 25041834)</div>
+            <div class="grid-2">
+                <div class="profile-intro">
+                    Chào bạn! Tôi là <strong>Nguyễn Thanh Tùng</strong>, hiện đang theo học chuyên ngành <strong>Ngôn ngữ và Văn hóa Trung Quốc</strong> tại Trường Đại học Ngoại ngữ - ĐHQGHN. 
+                    Trong bối cảnh bùng nổ mạnh mẽ của trí tuệ nhân tạo, tôi luôn có một niềm tin sâu sắc rằng công nghệ không phải là rào cản hay giải pháp thay thế con người, mà chính là bệ phóng hoàn hảo giúp chúng ta nâng tầm tư duy và tối ưu hóa hiệu suất nghiên cứu khoa học. 
+                    <br><br>
+                    Học phần <strong>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</strong> đã thực sự trang bị cho tôi một nền tảng vững vàng, khoa học và tư duy chuẩn mực để tự tin làm chủ làn sóng công nghệ này một cách minh bạch và tự tôn nhất.
                 </div>
-                <div class="detail-item">
-                    <div class="detail-label">Khoa / Đào tạo</div>
-                    <div class="detail-value">Ngôn ngữ và Văn hoá Trung Quốc</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Đơn vị học tập</div>
-                    <div class="detail-value">Trường Đại học Ngoại ngữ - ĐHQGHN</div>
+                
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Sinh viên thực hiện</div>
+                        <div class="detail-value">Nguyễn Thanh Tùng (MSSV: 25041834)</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Khoa đào tạo</div>
+                        <div class="detail-value">Ngôn ngữ và Văn hoá Trung Quốc</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Đơn vị học tập</div>
+                        <div class="detail-value">Trường Đại học Ngoại ngữ - ĐHQGHN</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Portfolio Objectives -->
-        <div class="objectives-container" style="margin-top: 80px;">
-            <h3 class="section-subtitle">Mục Tiêu Của Digital Portfolio</h3>
-            <div class="grid-3">
-                <div class="objective-item">
-                    <h4 class="objective-title">Hệ thống hóa học thuật</h4>
-                    <p class="objective-desc">Tổng hợp và lưu trữ một cách trực quan tiến trình rèn luyện, hoàn thiện các kỹ năng kỹ thuật số nền tảng qua 6 bài tập lớn.</p>
-                </div>
-                <div class="objective-item">
-                    <h4 class="objective-title">Kiểm chứng năng lực số</h4>
-                    <p class="objective-desc">Chứng minh khả năng tương tác trực tiếp với các mô hình ngôn ngữ lớn (LLM) và các nền tảng sáng tạo nội dung tạo sinh tiên tiến.</p>
-                </div>
-                <div class="objective-item">
-                    <h4 class="objective-title">Khẳng định tính liêm chính</h4>
-                    <p class="objective-desc">Định hình ranh giới sử dụng công nghệ có trách nhiệm, giữ trọn sự tự tôn và danh dự khoa học của người học trong thời đại mới.</p>
+            <!-- Portfolio Objectives -->
+            <div class="objectives-container" style="margin-top: 80px;">
+                <h3 class="section-subtitle">Mục Tiêu Của Digital Portfolio</h3>
+                <div class="grid-3">
+                    <div class="objective-item">
+                        <h4 class="objective-title">Hệ thống hóa học thuật</h4>
+                        <p class="objective-desc">Lưu trữ có chọn lọc và trình bày trực quan toàn bộ tiến trình rèn luyện, hoàn thiện các kỹ năng số cơ bản thông qua 6 bài học lớn.</p>
+                    </div>
+                    <div class="objective-item">
+                        <h4 class="objective-title">Chứng minh năng lực</h4>
+                        <p class="objective-desc">Thể hiện khả năng làm việc trực tiếp, linh hoạt với mô hình ngôn ngữ lớn (LLM) cùng các nền tảng sáng tạo nội dung tạo sinh hiện đại.</p>
+                    </div>
+                    <div class="objective-item">
+                        <h4 class="objective-title">Khẳng định giá trị bản thân</h4>
+                        <p class="objective-desc">Xây dựng quy tắc ứng xử với công nghệ số một cách liêm chính, bảo vệ sự tự tôn của người học trong thời đại số hóa toàn cầu.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section-padding scroll-reveal">
-        <div class="projects-header">
-            <h2 class="huge-title" style="margin-bottom: 0;">Các Bài Tập<span>Đã Hoàn Thành</span></h2>
-            <a href="https://drive.google.com/drive/folders/1KWKKmy4pLG4ZLZWeO4CHrMnuiM9BLxm_?usp=drive_link" target="_blank" class="drive-callout">
-                Xem bài tập trên GG drive
-            </a>
-        </div>
-
-        <div class="project-list">
-            
-            <!-- Project 1 -->
-            <div class="project-row" onclick="toggleDetail('detail-1')">
-                <div class="project-num">01</div>
-                <div class="project-title">Tổ chức Thư mục & Quản lý File</div>
-                <div class="project-desc">Quy trình 12 bước định hình cấu trúc dữ liệu khoa học, ngăn nắp trên không gian lưu trữ số.</div>
+    <section id="projects">
+        <div class="container-inner scroll-reveal">
+            <div class="projects-header">
+                <h2 class="huge-title" style="margin-bottom: 0;">Các Bài Tập<span>Đã Hoàn Thành</span></h2>
+                <a href="https://drive.google.com/drive/folders/1KWKKmy4pLG4ZLZWeO4CHrMnuiM9BLxm_?usp=drive_link" target="_blank" class="drive-callout">
+                    Xem bài tập trên GG drive
+                </a>
             </div>
-            <div id="detail-1" class="project-detail-panel">
-                <div class="detail-grid">
-                    <div class="detail-meta-list">
-                        <div><strong>Mục tiêu:</strong> Làm chủ hệ thống file cục bộ trên máy tính, tạo tiền đề lưu trữ dữ liệu an toàn, khoa học, loại bỏ tình trạng thất lạc file.</div>
-                        <div><strong>Bài học rút ra:</strong> Quản lý tệp ngăn nắp giúp giải phóng bộ não khỏi sự hỗn loạn thông tin. Việc sử dụng phím tắt nâng cao hiệu suất làm việc lên gấp nhiều lần.</div>
-                    </div>
-                    <div class="detail-content">
-                        <h4>Quy trình Thực hành 12 Bước (Tương tác bên dưới)</h4>
-                        <p style="margin-bottom: 20px;">Dưới đây là mô phỏng 12 bước thực hành cụ thể mà tôi đã thực hiện trên File Explorer để xây dựng hệ thống dữ liệu số vững chắc:</p>
-                        
-                        <!-- Interactive Graphic Slider -->
-                        <div class="slider-container">
-                            <div class="slider-content">
-                                <div class="slider-step-num" id="sliderStepNum">Bước 1 / 12</div>
-                                <div class="slider-step-title" id="sliderStepTitle">Mở File Explorer</div>
-                                <div class="slider-step-desc" id="sliderStepDesc">Sử dụng tổ hợp phím tắt nhanh 'Windows + E' để mở nhanh trình quản lý tệp tin File Explorer mặc định của hệ điều hành.</div>
-                            </div>
-                            <div class="slider-controls">
-                                <button class="slider-btn" onclick="prevStep()">← Trước</button>
-                                <button class="slider-btn" onclick="nextStep()">Tiếp theo →</button>
+
+            <div class="project-list">
+                
+                <!-- Project 1 -->
+                <div class="project-row" onclick="toggleDetail('detail-1')">
+                    <div class="project-num">01</div>
+                    <div class="project-title">Tổ chức Thư mục & Quản lý File</div>
+                    <div class="project-desc">Định hình thói quen ngăn nắp trên máy tính qua quy trình 12 bước quản lý dữ liệu số khoa học.</div>
+                </div>
+                <div id="detail-1" class="project-detail-panel">
+                    <div class="detail-grid">
+                        <div class="detail-meta-list">
+                            <div><strong>Mục tiêu học tập:</strong> Làm chủ các thao tác lưu trữ tệp cục bộ trên máy tính, xây dựng cấu trúc thư mục phân cấp thông minh để tối ưu hóa thời gian tìm kiếm dữ liệu.</div>
+                            <div><strong>Bài học rút ra:</strong> Quản trị dữ liệu số một cách ngăn nắp cũng giống như sắp xếp một bàn làm việc gọn gàng. Sự chuẩn mực và việc ứng dụng phím tắt khoa học giúp tốc độ xử lý công việc tăng lên rõ rệt.</div>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Quy trình Thực hành 12 Bước (Tương tác bên dưới)</h4>
+                            <p style="margin-bottom: 20px;">Dưới đây là trình mô phỏng trực quan 12 bước tôi đã thực hiện trên File Explorer để tối ưu hóa không gian lưu trữ cá nhân:</p>
+                            
+                            <!-- Interactive Graphic Slider -->
+                            <div class="slider-container">
+                                <div class="slider-content">
+                                    <div class="slider-step-num" id="sliderStepNum">Bước 1 / 12</div>
+                                    <div class="slider-step-title" id="sliderStepTitle">Mở File Explorer</div>
+                                    <div class="slider-step-desc">Mở nhanh trình quản lý tệp File Explorer mặc định bằng cách sử dụng tổ hợp phím Windows + E.</div>
+                                </div>
+                                <div class="slider-controls">
+                                    <button class="slider-btn" onclick="prevStep()">← Trước</button>
+                                    <button class="slider-btn" onclick="nextStep()">Tiếp theo →</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 2 -->
-            <div class="project-row" onclick="toggleDetail('detail-2')">
-                <div class="project-num">02</div>
-                <div class="project-title">Tìm kiếm & Đánh giá Học thuật</div>
-                <div class="project-desc">Kiểm chứng mức độ tin cậy của 13 nguồn tài liệu học thuật về thị trường nhân lực tiếng Trung.</div>
-            </div>
-            <div id="detail-2" class="project-detail-panel">
-                <div class="detail-grid">
-                    <div class="detail-meta-list">
-                        <div><strong>Mục tiêu:</strong> Học cách phân loại và kiểm chứng thông tin học thuật đa chiều liên quan đến chủ đề cơ hội việc làm và nhu cầu nhân lực tiếng Trung tại Việt Nam.</div>
-                        <div><strong>Bài học rút ra:</strong> Tuyệt đối không phụ thuộc vào các nguồn thông tin quảng cáo, tuyển sinh hời hợt. Luôn đối chiếu phương pháp khảo sát và chỉ số phản biện để chọn lọc thông tin học thuật chính xác.</div>
-                    </div>
-                    <div class="detail-content">
-                        <h4>Bảng Phân Tích & Đối Chiếu 13 Nguồn Tài Liệu (Bấm tab để lọc)</h4>
-                        
-                        <!-- Interactive Table Filter -->
-                        <div class="table-container">
-                            <div class="filter-tabs">
-                                <button class="filter-tab active" onclick="filterSources('all')">Tất cả</button>
-                                <button class="filter-tab" onclick="filterSources('bao-khoa-hoc')">Bài báo</button>
-                                <button class="filter-tab" onclick="filterSources('sach')">Sách</button>
-                                <button class="filter-tab" onclick="filterSources('website')">Website</button>
-                                <button class="filter-tab" onclick="filterSources('khac')">Báo chí/Khác</button>
-                            </div>
-                            <table class="sources-table" id="sourcesTable">
-                                <thead>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Tài liệu / Tác giả</th>
-                                        <th>Cơ quan xuất bản / Phương pháp</th>
-                                        <th>Cập nhật</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Rows populated via JS -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <!-- Project 2 -->
+                <div class="project-row" onclick="toggleDetail('detail-2')">
+                    <div class="project-num">02</div>
+                    <div class="project-title">Tìm kiếm & Đánh giá Học thuật</div>
+                    <div class="project-desc">Khảo sát và kiểm chứng độ tin cậy của 13 nguồn tài liệu uy tín về thị trường nhân lực tiếng Trung.</div>
                 </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-row" onclick="toggleDetail('detail-3')">
-                <div class="project-num">03</div>
-                <div class="project-title">Kỹ Thuật Viết Prompt Hiệu Quả</div>
-                <div class="project-desc">Học cách trò chuyện đa lớp với AI thông qua Role-play, Chain-of-thought và Few-shot.</div>
-            </div>
-            <div id="detail-3" class="project-detail-panel">
-                <div class="detail-grid">
-                    <div class="detail-meta-list">
-                        <div><strong>Mục tiêu:</strong> Ứng dụng các quy tắc kỹ nghệ prompt phức tạp để hướng dẫn mô hình ngôn ngữ lớn (LLM) hỗ trợ sâu sắc cho tác vụ học tập tiếng Trung.</div>
-                        <div><strong>Bài học rút ra:</strong> Trí tuệ nhân tạo phản xạ dựa trên chất lượng câu hỏi của bạn. Việc chia nhỏ quy trình suy nghĩ (CoT) giúp AI giảm tỷ lệ bịa đặt dữ liệu (hallucination) xuống mức tối thiểu.</div>
-                    </div>
-                    <div class="detail-content">
-                        <h4>Trình Mô Phỏng Sandbox - Đối Chiếu Cấu Trúc Prompt</h4>
-                        <p style="margin-bottom: 20px;">Chọn tác vụ và cấp độ prompt bên dưới để quan sát cấu trúc câu lệnh tối ưu hóa:</p>
-                        
-                        <!-- Interactive Prompt Sandbox -->
-                        <div class="sandbox-container">
-                            <div class="sandbox-selectors">
-                                <button class="sandbox-sel-btn active" onclick="selectSandboxTask(1)">Tác vụ 1: Tóm tắt</button>
-                                <button class="sandbox-sel-btn" onclick="selectSandboxTask(2)">Tác vụ 2: Khái niệm</button>
-                                <button class="sandbox-sel-btn" onclick="selectSandboxTask(3)">Tác vụ 3: Ôn tập</button>
-                            </div>
-                            <div class="sandbox-levels">
-                                <button class="sandbox-lvl-btn active" onclick="selectSandboxLvl('co-ban')">Cơ bản</button>
-                                <button class="sandbox-lvl-btn" onclick="selectSandboxLvl('cai-tien')">Cải tiến</button>
-                                <button class="sandbox-lvl-btn" onclick="selectSandboxLvl('nang-cao')">Nâng cao</button>
-                            </div>
-                            <div class="sandbox-display" id="sandboxDisplay">
-                                Loading...
+                <div id="detail-2" class="project-detail-panel">
+                    <div class="detail-grid">
+                        <div class="detail-meta-list">
+                            <div><strong>Mục tiêu học tập:</strong> Học cách phân loại, đối chiếu và sàng lọc thông tin học thuật đa chiều về chủ đề nhu cầu nhân lực và cơ hội việc làm ngành Ngôn ngữ Trung Quốc.</div>
+                            <div><strong>Bài học rút ra:</strong> Tuyệt đối không dựa dẫm vào những trang thông tin tuyển sinh mang tính quảng bá đơn thuần. Một người nghiên cứu nghiêm túc cần chủ động kiểm chứng số liệu, phương pháp khảo sát để đưa ra nhận định đúng đắn.</div>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Phân Tích 13 Nguồn Tài Liệu Uy Tín (Bấm tab để lọc nhanh)</h4>
+                            
+                            <!-- Interactive Table Filter -->
+                            <div class="table-container">
+                                <div class="filter-tabs">
+                                    <button class="filter-tab active" onclick="filterSources('all')">Tất cả</button>
+                                    <button class="filter-tab" onclick="filterSources('bao-khoa-hoc')">Bài báo học thuật</button>
+                                    <button class="filter-tab" onclick="filterSources('sach')">Sách chuyên khảo</button>
+                                    <button class="filter-tab" onclick="filterSources('website')">Website đào tạo</button>
+                                    <button class="filter-tab" onclick="filterSources('khac')">Báo chí / Khác</button>
+                                </div>
+                                <table class="sources-table" id="sourcesTable">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Tài liệu / Tác giả</th>
+                                            <th>Nhà xuất bản / Phương pháp kiểm chứng</th>
+                                            <th>Năm</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Rows populated via JS -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 4 -->
-            <div class="project-row" onclick="toggleDetail('detail-4')">
-                <div class="project-num">04</div>
-                <div class="project-title">Hợp Tác Trực Tuyến & Quản Trị Dự Án</div>
-                <div class="project-desc">Chi tiết hóa các công cụ Trello, Google Drive và quy trình vượt qua các thử thách nhóm.</div>
-            </div>
-            <div id="detail-4" class="project-detail-panel">
-                <div class="detail-grid">
-                    <div class="detail-meta-list">
-                        <div><strong>Mục tiêu:</strong> Thiết lập quy trình làm việc nhóm trực tuyến hiệu quả cao, sử dụng các giải pháp phần mềm hiện đại để điều phối công việc trơn tru bất chấp khoảng cách địa lý.</div>
-                        <div><strong>Công cụ:</strong> Trello (Quản lý tiến độ/Task), Google Docs (Soạn thảo cộng tác trực tiếp), Google Drive (Lưu trữ), Zalo (Thảo luận nhóm), Capcut (Sản xuất video báo cáo).</div>
-                        <div><strong>Bài học rút ra:</strong> Làm việc nhóm online không dựa vào cảm xúc mà dựa vào quy tắc và tính minh bạch. Việc phân công công việc cụ thể gắn liền với mốc thời gian rõ ràng trên Trello giúp giảm thiểu 90% sự trễ nải.</div>
-                    </div>
-                    <div class="detail-content">
-                        <h4>Mô Phỏng Không Gian Quản Trị Dự Án (Kanban Trello nhóm)</h4>
-                        <p style="margin-bottom: 20px;">Dưới đây là sơ đồ hóa các nhóm công việc dự án nghiên cứu số của Nhóm 9 chúng tôi:</p>
-                        
-                        <!-- Kanban Interactive Mockup -->
-                        <div class="kanban-board">
-                            <div class="kanban-column">
-                                <div class="kanban-col-title">Cần làm (To-Do)</div>
-                                <div class="kanban-card">Xác định đề tài nghiên cứu AI và Học tiếng Trung</div>
-                                <div class="kanban-card">Phân công nhân sự và thiết lập thư mục Drive chung</div>
-                            </div>
-                            <div class="kanban-column">
-                                <div class="kanban-col-title">Đang làm (In Progress)</div>
-                                <div class="kanban-card">Viết nội dung báo cáo cá nhân, tổng hợp tài liệu trên Google Docs</div>
-                                <div class="kanban-card">Chỉnh sửa và quay video tổng hợp bằng Capcut</div>
-                            </div>
-                            <div class="kanban-column">
-                                <div class="kanban-col-title">Đã xong (Done)</div>
-                                <div class="kanban-card">Phê duyệt báo cáo cuối cùng, nộp bài đúng hạn và lưu trữ thông tin</div>
+                <!-- Project 3 -->
+                <div class="project-row" onclick="toggleDetail('detail-3')">
+                    <div class="project-num">03</div>
+                    <div class="project-title">Kỹ Thuật Viết Prompt Hiệu Quả</div>
+                    <div class="project-desc">Trò chuyện đa lớp cùng mô hình ngôn ngữ lớn (LLM) qua phương pháp CoT và Few-shot.</div>
+                </div>
+                <div id="detail-3" class="project-detail-panel">
+                    <div class="detail-grid">
+                        <div class="detail-meta-list">
+                            <div><strong>Mục tiêu học tập:</strong> Ứng dụng các quy tắc thiết kế câu lệnh tiên tiến để biến trí tuệ nhân tạo từ một máy tra cứu đơn thuần thành trợ lý tư duy đồng hành đắc lực.</div>
+                            <div><strong>Bài học rút ra:</strong> Câu trả lời của AI phản ánh chiều sâu tư duy của câu hỏi từ bạn. Việc vạch ra các bước lập luận trung gian (Chain of Thought) giúp AI giải quyết bài toán phức tạp mà không bị ảo giác thông tin.</div>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Trình Mô Phỏng Sandbox - So Sánh Cấu Trúc Câu Lệnh</h4>
+                            <p style="margin-bottom: 20px;">Lựa chọn tác vụ học tập và cấp độ prompt bên dưới để trải nghiệm sự thay đổi trong chất lượng câu lệnh:</p>
+                            
+                            <!-- Interactive Prompt Sandbox -->
+                            <div class="sandbox-container">
+                                <div class="sandbox-selectors">
+                                    <button class="sandbox-sel-btn active" onclick="selectSandboxTask(1)">Tác vụ 1: Tóm tắt bài</button>
+                                    <button class="sandbox-sel-btn" onclick="selectSandboxTask(2)">Tác vụ 2: Giải nghĩa chữ</button>
+                                    <button class="sandbox-sel-btn" onclick="selectSandboxTask(3)">Tác vụ 3: Thiết kế đề ôn</button>
+                                </div>
+                                <div class="sandbox-levels">
+                                    <button class="sandbox-lvl-btn active" onclick="selectSandboxLvl('co-ban')">Cơ bản</button>
+                                    <button class="sandbox-lvl-btn" onclick="selectSandboxLvl('cai-tien')">Cải tiến</button>
+                                    <button class="sandbox-lvl-btn" onclick="selectSandboxLvl('nang-cao')">Nâng cao</button>
+                                </div>
+                                <div class="sandbox-display" id="sandboxDisplay">
+                                    Đang tải dữ liệu...
+                                </div>
                             </div>
                         </div>
-
-                        <h4 style="margin-top: 30px;">Giải Quyết Khó Khăn & Thách Thức Thực Tế</h4>
-                        <p><strong>Khó khăn 1: Lệch lịch hoạt động và học tập giữa các thành viên:</strong> Do lịch học khác nhau, việc họp nhóm trực tiếp vô cùng bất tiện.<br>
-                        <em>Giải pháp:</em> Nhóm thống nhất lịch họp cố định trực tuyến vào tối muộn, ghi lại biên bản cuộc họp (Meeting Minutes) lưu trữ trên Drive để các thành viên vắng mặt luôn nắm bắt được nội dung.</p>
-                        
-                        <p style="margin-top: 15px;"><strong>Khó khăn 2: Tranh cãi trong quan điểm chuyên môn:</strong> Khi xây dựng cấu trúc bài viết, các thành viên có nhiều góc nhìn trái ngược.<br>
-                        <em>Giải pháp:</em> Lắng nghe ý kiến của mọi người một cách bình đẳng, đưa ra các lập luận khách quan dựa trên số liệu thực tế, thảo luận cởi mở để thống nhất giải pháp tối ưu.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 5 -->
-            <div class="project-row" onclick="toggleDetail('detail-5')">
-                <div class="project-num">05</div>
-                <div class="project-title">Sáng Tạo Nội Dung Số Cùng AI</div>
-                <div class="project-desc">Hành trình ứng dụng Claude, Dall-E và Canva thiết kế nội dung "Gen Z - Áp lực cuộc sống".</div>
-            </div>
-            <div id="detail-5" class="project-detail-panel">
-                <div class="detail-grid">
-                    <div class="detail-meta-list">
-                        <div><strong>Mục tiêu:</strong> Ứng dụng phối hợp thế mạnh của nhiều mô hình trí tuệ nhân tạo khác nhau để tạo ra sản phẩm truyền thông (Infographic) giàu sức thuyết phục và có giá trị thẩm mỹ.</div>
-                        <div><strong>Bộ ba công cụ:</strong> Claude (Sắp xếp cấu trúc dữ liệu thô), ChatGPT-DallE (Kiến tạo tài nguyên hình ảnh), Canva AI (Tối ưu bố cục trình bày).</div>
-                        <div><strong>Bài học rút ra:</strong> AI tạo ra sản phẩm thô cực kỳ nhanh chóng nhưng lại thiếu bản sắc và gu thẩm mỹ riêng. Con người phải là kiến trúc sư trưởng can thiệp trực tiếp để đưa dữ liệu thực tế và cảm xúc thật vào tác phẩm.</div>
-                    </div>
-                    <div class="detail-content">
-                        <h4>Khám Phá Bố Cục Infographic "Gen Z Stress" (Bấm chọn phần để xem chi tiết)</h4>
-                        
-                        <!-- Interactive Infographic Explorer -->
-                        <div class="info-explorer">
-                            <div class="info-parts">
-                                <button class="info-part-btn active" onclick="selectInfoPart(1)">Phần 1: Những con số biết nói</button>
-                                <button class="info-part-btn" onclick="selectInfoPart(2)">Phần 2: Mức độ căng thẳng & lo âu</button>
-                                <button class="info-part-btn" onclick="selectInfoPart(3)">Phần 3: Vòng luẩn quẩn của Gen Z</button>
-                                <button class="info-part-btn" onclick="selectInfoPart(4)">Phần 4: Giải pháp chữa lành tích cực</button>
-                            </div>
-                            <div class="info-preview-box" id="infoPreviewBox">
-                                <div class="info-stat">46% / 64%</div>
-                                <div class="info-preview-title">Những con số biết nói</div>
-                                <div class="info-preview-desc">Trực quan hóa thống kê: 46% Gen Z được chẩn đoán mắc các vấn đề sức khỏe tâm lý, 64% mệt mỏi vì áp lực tài chính và định kiến từ xã hội. Những con số này gióng lên hồi chuông cảnh báo thực sự.</div>
-                            </div>
+                <!-- Project 4 -->
+                <div class="project-row" onclick="toggleDetail('detail-4')">
+                    <div class="project-num">04</div>
+                    <div class="project-title">Hợp Tác Trực Tuyến & Quản Trị Dự Án</div>
+                    <div class="project-desc">Vận dụng Trello và Google Workspace điều hành dự án nhóm vượt qua các rào cản thời gian.</div>
+                </div>
+                <div id="detail-4" class="project-detail-panel">
+                    <div class="detail-grid">
+                        <div class="detail-meta-list">
+                            <div><strong>Mục tiêu học tập:</strong> Thiết lập môi trường làm việc cộng tác trực tuyến mượt mà, khoa học, khắc phục mọi rào cản địa lý và phân bổ thời gian hiệu quả cho tập thể.</div>
+                            <div><strong>Công cụ ứng dụng:</strong> Trello (quản lý phân công công việc), Google Docs (đồng biên tập báo cáo trực tiếp), Google Drive (kho tài nguyên chung), Zalo (thảo luận nhanh), Capcut (biên tập sản phẩm video nhóm).</div>
+                            <div><strong>Bài học rút ra:</strong> Thành công của làm việc nhóm online không dựa trên cảm xúc cá nhân mà dựa trên quy tắc đồng thuận và tính minh bạch. Việc ghi nhận mốc thời hạn (Due date) cụ thể trên Trello giúp mọi thành viên tự giác chủ động bám sát tiến độ.</div>
                         </div>
+                        <div class="detail-content">
+                            <h4>Mô Phỏng Không Gian Quản Trị Nhóm (Kanban Trello của Nhóm 9)</h4>
+                            <p style="margin-bottom: 20px;">Dưới đây là sơ đồ hóa các phân khúc công việc thực tế trong dự án nghiên cứu số của tập thể chúng tôi:</p>
+                            
+                            <!-- Kanban Interactive Mockup -->
+                            <div class="kanban-board">
+                                <div class="kanban-column">
+                                    <div class="kanban-col-title">Cần làm (To-Do)</div>
+                                    <div class="kanban-card">Xác định đề tài nghiên cứu về AI và Học tiếng Trung</div>
+                                    <div class="kanban-card">Phân chia nhiệm vụ cụ thể và thiết lập thư mục Drive chung</div>
+                                </div>
+                                <div class="kanban-column">
+                                    <div class="kanban-col-title">Đang thực hiện (In Progress)</div>
+                                    <div class="kanban-card">Viết báo cáo cá nhân, tổng hợp nội dung trên Google Docs</div>
+                                    <div class="kanban-card">Chỉnh sửa, hoàn thiện video tổng hợp báo cáo bằng Capcut</div>
+                                </div>
+                                <div class="kanban-column">
+                                    <div class="kanban-col-title">Đã hoàn thành (Done)</div>
+                                    <div class="kanban-card">Phê duyệt báo cáo cuối cùng, nộp bài đúng hạn và lưu trữ dự án</div>
+                                </div>
+                            </div>
 
-                        <h4 style="margin-top: 30px;">Kinh nghiệm làm việc thực tế với AI tạo sinh</h4>
-                        <p>Trong quá trình làm việc, tôi nhận thấy Dall-E và Canva AI đôi khi tạo ra những hình ảnh và mẫu thiết kế khá chung chung (generic), giống ảnh stock có sẵn trên mạng. Để khắc phục rào cản này, tôi đã chủ động tìm kiếm thêm các hình ảnh chân thực từ Google Images và tự mình căn chỉnh, thiết lập lại toàn bộ màu sắc, font chữ trên Canva để tạo nên phong cách nhất quán, có hồn hơn cho sản phẩm.</p>
+                            <h4 style="margin-top: 35px;">Vượt Qua Thử Thách & Tìm Kiếm Giải Pháp Đội Nhóm</h4>
+                            <p><strong>Khó khăn 1: Sự lệch múi giờ sinh hoạt và lịch học của từng thành viên:</strong> Do lịch trình cá nhân không trùng nhau, việc triệu tập họp nhóm trực tiếp vô cùng khó khăn.<br>
+                            <em>Giải pháp khắc phục:</em> Chúng tôi thống nhất tổ chức họp trực tuyến định kỳ vào tối muộn, biên soạn Biên bản cuộc họp lưu trữ công khai trên Drive để bất kỳ ai vắng mặt đều nhanh chóng cập nhật thông tin.</p>
+                            
+                            <p style="margin-top: 20px;"><strong>Khó khăn 2: Khác biệt quan điểm khi xây dựng cấu trúc nội dung:</strong> Khi thảo luận dàn ý chi tiết, các thành viên dễ phát sinh nhiều ý kiến trái ngược.<br>
+                            <em>Giải pháp khắc phục:</em> Lắng nghe ý kiến của mọi người một cách bình đẳng, đưa ra các lập luận khách quan dựa trên số liệu thực tế, thảo luận cởi mở để cùng nhau lựa chọn phương án tối ưu nhất.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-row" onclick="toggleDetail('detail-5')">
+                    <div class="project-num">05</div>
+                    <div class="project-title">Sáng Tạo Nội Dung Số Cùng AI</div>
+                    <div class="project-desc">Trải nghiệm ứng dụng Claude, Dall-E và Canva thiết kế Infographic "Gen Z - Áp lực cuộc sống".</div>
+                </div>
+                <div id="detail-5" class="project-detail-panel">
+                    <div class="detail-grid">
+                        <div class="detail-meta-list">
+                            <div><strong>Mục tiêu học tập:</strong> Phối hợp sức mạnh đa nhiệm của nhiều mô hình AI khác nhau để biến các số liệu thô thành một tác phẩm truyền thông trực quan giàu sức thuyết phục.</div>
+                            <div><strong>Bộ ba trợ lý AI:</strong> Claude (vẽ dàn ý và thống kê số liệu), ChatGPT-DallE (sinh tài nguyên hình ảnh nghệ thuật độc bản), Canva AI (đề xuất bố cục trình bày).</div>
+                            <div><strong>Bài học rút ra:</strong> AI là trợ thủ phác thảo vĩ đại giúp rút ngắn thời gian ban đầu, nhưng sản phẩm dễ bị rập khuôn và generic. Con người đóng vai trò tối quan trọng trong việc sàng lọc dữ liệu chính xác, phối màu và thổi hồn để hoàn thiện tác phẩm.</div>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Khám Phá Cấu Trúc Infographic "Gen Z Stress" (Bấm chọn phần để hiển thị chi tiết)</h4>
+                            
+                            <!-- Interactive Infographic Explorer -->
+                            <div class="info-explorer">
+                                <div class="info-parts">
+                                    <button class="info-part-btn active" onclick="selectInfoPart(1)">Phần 1: Những con số biết nói</button>
+                                    <button class="info-part-btn" onclick="selectInfoPart(2)">Phần 2: Thước đo sự căng thẳng</button>
+                                    <button class="info-part-btn" onclick="selectInfoPart(3)">Phần 3: Vòng luẩn quẩn tâm lý</button>
+                                    <button class="info-part-btn" onclick="selectInfoPart(4)">Phần 4: Phương án chữa lành</button>
+                                </div>
+                                <div class="info-preview-box" id="infoPreviewBox">
+                                    <div class="info-stat">46% / 64%</div>
+                                    <div class="info-preview-title">Những con số biết nói</div>
+                                    <div class="info-preview-desc">Trực quan hóa thống kê thực tế: 46% Gen Z được chẩn đoán gặp các vấn đề sức khỏe tâm lý, 64% mệt mỏi trước gánh nặng tài chính và định kiến vô hình từ xã hội. Những con số gióng lên hồi chuông cảnh báo thực sự về áp lực thế hệ trẻ.</div>
+                                </div>
+                            </div>
+
+                            <h4 style="margin-top: 35px;">Kinh Nghiệm Sáng Tạo Thực Tế</h4>
+                            <p>Trong quá trình sinh ảnh và bố cục tự động, tôi phát hiện ra Dall-E và Canva AI đôi khi tạo ra những hình ảnh và mẫu thiết kế khá khô khan, giống như các bức ảnh quảng cáo rập khuôn trên mạng. Để khắc phục điều này, tôi đã chủ động tìm kiếm thêm các hình ảnh chân thực, giàu cảm xúc trực tiếp trên Google Images, đồng thời tự tay căn chỉnh lại màu sắc, sắp đặt phông chữ thủ công trên Canva để tác phẩm có sự mượt mà và cá tính riêng biệt.</p>
                     </div>
                 </div>
             </div>
@@ -977,113 +1026,121 @@
             <div class="project-row" onclick="toggleDetail('detail-6')">
                 <div class="project-num">06</div>
                 <div class="project-title">Sử Dụng AI Có Trách Nhiệm</div>
-                <div class="project-desc">Nghiên cứu quy chế của UEH nhằm định hình chuẩn mực đạo đức khoa học cho cá nhân.</div>
+                <div class="project-desc">Nghiên cứu chính sách của UEH để xây dựng bộ quy tắc liêm chính học thuật cá nhân.</div>
             </div>
             <div id="detail-6" class="project-detail-panel">
                 <div class="detail-grid">
                     <div class="detail-meta-list">
-                        <div><strong>Mục tiêu:</strong> Hiểu rõ bối cảnh pháp lý, đạo đức học thuật khi ứng dụng công nghệ AI tạo sinh trong nhà trường, kiến tạo bộ nguyên tắc tự quản lý bản thân nghiêm ngặt.</div>
-                        <div><strong>Đối tượng nghiên cứu:</strong> Quyết định số 4002/QĐ-ĐHKT-NCPTGKTC ngày 18/12/2025 của Đại học Kinh tế TP.HCM (UEH) về việc kiểm soát và xử lý hành vi đạo văn và sử dụng AI.</div>
-                        <div><strong>Bài học rút ra:</strong> AI là đặc quyền hỗ trợ sáng tạo, nhưng sự lười nhác và sao chép vô trách nhiệm sẽ hủy hoại tư duy phản biện của người học. Trung thực kê khai chính là bảo vệ uy tín học thuật của chính mình.</div>
+                        <div><strong>Mục tiêu học tập:</strong> Nghiên cứu bối cảnh pháp lý, đạo đức học thuật khi đưa AI vào trường học, từ đó xây dựng cho bản thân một bộ nguyên tắc làm việc liêm chính, tự chịu trách nhiệm trước mọi sản phẩm.</div>
+                        <div><strong>Đối tượng phân tích:</strong> Quyết định số 4002/QĐ-ĐHKT-NCPTGKTC ngày 18/12/2025 của Đại học Kinh tế TP.HCM (UEH) về kiểm soát đạo văn và quy chuẩn sử dụng AI trong học thuật.</div>
+                        <div><strong>Bài học rút ra:</strong> AI là đặc quyền công nghệ hỗ trợ con người, không phải tấm bình phong cho sự lười nhác tư duy. Sự tự trọng của người nghiên cứu nằm ở việc minh bạch khai báo mức độ hỗ trợ từ AI.</div>
                     </div>
                     <div class="detail-content">
-                        <h4>Bảng Đối Chiếu Quy Định AI - UEH (Tương tác bên dưới)</h4>
+                        <h4>Sơ Đồ Phân Loại Quy Định Sử Dụng AI - UEH</h4>
                         
                         <!-- Policy Comparator Interactive -->
                         <div class="policy-comparator">
                             <div class="policy-box">
-                                <div class="policy-title">AI hỗ trợ (Assistive AI)</div>
+                                <div class="policy-title">AI hỗ trợ kỹ thuật (Assistive AI)</div>
                                 <ul class="policy-list">
-                                    <li>Công cụ kiểm tra ngữ pháp, chính tả (Grammarly, MS Word).</li>
-                                    <li>Công cụ hỗ trợ dịch thuật cơ bản (Google Translate).</li>
-                                    <li><strong>Quy định:</strong> Không bắt buộc phải kê khai vì chỉ mang tính chất bổ trợ định dạng, không tạo ra nội dung sáng tạo mới.</li>
+                                    <li>Công cụ soát lỗi chính tả, chỉnh sửa ngữ pháp cơ bản (Grammarly, MS Word).</li>
+                                    <li>Công cụ tra từ điển và hỗ trợ dịch thuật thô (Google Translate).</li>
+                                    <li><strong>Quy chế:</strong> Không bắt buộc phải thực hiện khai báo do đây là các công cụ bổ trợ kỹ thuật, không tự sáng tạo nội dung mới.</li>
                                 </ul>
                             </div>
                             <div class="policy-box">
-                                <div class="policy-title">AI tạo sinh (Generative AI)</div>
+                                <div class="policy-title">AI tạo sinh nội dung (Generative AI)</div>
                                 <ul class="policy-list">
-                                    <li>Công cụ tự động tạo ra nội dung mới dưới dạng văn bản, hình ảnh, code (ChatGPT, Claude, Gemini, Midjourney).</li>
-                                    <li><strong>Quy định:</strong> Bắt buộc phải kê khai rõ ràng, minh bạch về phạm vi và mức độ ứng dụng trong mọi sản phẩm học thuật.</li>
+                                    <li>Mô hình tự động viết văn bản, sinh hình ảnh, lập trình hoặc tạo số liệu mới (ChatGPT, Claude, Gemini, Midjourney).</li>
+                                    <li><strong>Quy chế:</strong> Bắt buộc phải thực hiện khai báo minh bạch, nêu rõ mục đích, mức độ và phạm vi ứng dụng trong mọi bài báo cáo.</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <h4 style="margin-top: 30px;">Hành vi được coi là vi phạm nghiêm trọng quy chế</h4>
-                        <p>1. Sử dụng nội dung do AI tạo sinh viết ra trực tiếp mà không kê khai hoặc kê khai không trung thực.<br>
-                        2. Sử dụng AI tạo sinh để làm toàn bộ hoặc phần lớn báo cáo học thuật mà không có sự đóng góp tư duy thực tế của tác giả.<br>
-                        3. Sử dụng AI để tạo ra dữ liệu nghiên cứu giả hoặc chế tạo các tài liệu tham khảo không tồn tại (ảo giác trích dẫn).</p>
+                        <h4 style="margin-top: 35px;">Những Hành Vi Vi Phạm Nghiêm Trọng Cần Tránh</h4>
+                        <p>1. Sao chép trực tiếp nội dung do AI tạo sinh viết ra mà không thực hiện khai báo trung thực.<br>
+                        2. Lạm dụng AI để hoàn thiện toàn bộ hoặc phần lớn sản phẩm học thuật mà thiếu đi sự đóng góp tư duy thực chất của cá nhân.<br>
+                        3. Sử dụng AI tạo sinh để làm sai lệch thông tin nghiên cứu hoặc tự động kiến tạo các nguồn trích dẫn học thuật ảo không tồn tại.</p>
                     </div>
                 </div>
             </div>
 
         </div>
+    </div>
     </section>
 
     <!-- Ethical Rules Section -->
-    <section id="rules" class="section-padding scroll-reveal">
-        <h2 class="huge-title">Bản Lĩnh Đạo Đức<span>Sử Dụng AI Cá Nhân</span></h2>
-        <div class="rules-container">
-            <div class="rule-card">
-                <div class="rule-num">01</div>
-                <h3 class="rule-title">Đọc Hiểu Chủ Động</h3>
-                <p class="rule-desc">Luôn tự nghiền ngẫm văn bản gốc ít nhất 60% tổng thời gian làm việc trước khi nhờ AI tóm tắt hoặc phân tích cấu trúc phức tạp.</p>
-            </div>
-            <div class="rule-card">
-                <div class="rule-num">02</div>
-                <h3 class="rule-title">Sát Thực Số Liệu</h3>
-                <p class="rule-desc">Tuyệt đối kiểm tra chéo mọi nguồn trích dẫn và dữ liệu định lượng mà AI đề xuất để tránh hiện tượng ảo giác thông tin.</p>
-            </div>
-            <div class="rule-card">
-                <div class="rule-num">03</div>
-                <h3 class="rule-title">Rõ Ràng Ranh Giới</h3>
-                <p class="rule-desc">Chỉ dùng AI cho giai đoạn "tiền xử lý" dữ liệu thô. Quá trình tư duy cốt lõi, phản biện và đúc rút bài học luôn thuộc về khối óc con người.</p>
+    <section id="rules">
+        <div class="container-inner scroll-reveal">
+            <h2 class="huge-title">Bản Lĩnh Đạo Đức<span>Sử Dụng AI Cá Nhân</span></h2>
+            <div class="rules-container">
+                <div class="rule-card">
+                    <div class="rule-num">01</div>
+                    <h3 class="rule-title">Đọc Hiểu Chủ Động</h3>
+                    <p class="rule-desc">Luôn tự nghiền ngẫm văn bản gốc ít nhất 60% tổng thời gian làm việc trước khi nhờ AI tóm tắt hoặc phân tích cấu trúc phức tạp.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-num">02</div>
+                    <h3 class="rule-title">Sát Thực Số Liệu</h3>
+                    <p class="rule-desc">Tuyệt đối kiểm tra chéo mọi nguồn trích dẫn và dữ liệu định lượng mà AI đề xuất để tránh hiện tượng ảo giác thông tin.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-num">03</div>
+                    <h3 class="rule-title">Rõ Ràng Ranh Giới</h3>
+                    <p class="rule-desc">Chỉ dùng AI cho giai đoạn "tiền xử lý" dữ liệu thô. Quá trình tư duy cốt lõi, phản biện và đúc rút bài học luôn thuộc về khối óc con người.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer & Reflection -->
+    <!-- Footer & Reflection Section -->
     <footer id="reflection">
-        <div class="footer-grid scroll-reveal">
-            <div>
-                <h2 class="huge-title" style="margin-bottom: 40px;">Nhìn Lại<span>Hành Trình Số</span></h2>
-                <div class="reflection-text">
-                    Trải qua học phần Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo, tôi đã thực sự bước ra khỏi vùng an toàn của một sinh viên ngôn ngữ thuần túy để tự tin làm chủ các công cụ công nghệ số hóa tiên tiến nhất [1].
+        <div class="container-inner">
+            <div class="footer-top scroll-reveal">
+                <div>
+                    <h2 class="huge-title" style="margin-bottom: 30px;">Nhìn Lại<span>Hành Trình Số</span></h2>
+                    <div class="reflection-text">
+                        Trải qua học phần Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo, tôi đã thực sự bước ra khỏi vùng an toàn của một sinh viên ngôn ngữ truyền thống để tự tin làm chủ những nền tảng công nghệ số hóa tiên tiến nhất. 
+                        <br><br>
+                        Sự kết hợp giữa tư duy ngôn ngữ sâu sắc và tư duy cấu trúc số hóa giúp tôi nhận ra: Bản chất của công nghệ là để giải phóng sức sáng tạo thô, nhưng điều thổi hồn và tạo nên giá trị thật sự của một bài viết nghiên cứu chính là sự chiêm nghiệm tỉ mỉ của con người.
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 30px;">
+                    <div class="footer-logo">TUNG.NGUYEN</div>
+                    <ul class="footer-nav">
+                        <li><a href="#about">Về Tôi</a></li>
+                        <li><a href="#projects">Sản Phẩm Đã Hoàn Thành</a></li>
+                        <li><a href="#rules">Nguyên Tắc Ứng Xử AI</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/1KWKKmy4pLG4ZLZWeO4CHrMnuiM9BLxm_?usp=drive_link" target="_blank" style="color: var(--accent-color); font-weight: 500;">Xem thư mục tài liệu đầy đủ →</a></li>
+                    </ul>
                 </div>
             </div>
-            <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 20px;">
-                <p style="color: var(--muted-color); font-size: 1rem; line-height: 1.6; font-style: italic;">
-                    "Ngôn ngữ mở ra thế giới, công nghệ giúp thế giới ấy vận động sáng tạo và văn minh hơn."
-                </p>
-                <a href="https://drive.google.com/drive/folders/1KWKKmy4pLG4ZLZWeO4CHrMnuiM9BLxm_?usp=drive_link" target="_blank" class="drive-callout" style="border-color: var(--border-color);">
-                    Thư mục tài liệu đầy đủ
-                </a>
-            </div>
-        </div>
 
-        <!-- Total Reflection Grid (Khó khăn, thuận lợi, bài học) -->
-        <div class="total-reflection scroll-reveal">
-            <div class="reflection-card">
-                <div class="reflection-card-title">Thuận Lợi</div>
-                <div class="reflection-card-desc">Được học tập trong môi trường năng động của ULIS, được tiếp cận sớm với các công cụ AI hàng đầu thế giới (Claude, ChatGPT, Canva) cùng quy trình hướng dẫn thực hành thực tế, rõ ràng của giảng viên [1].</div>
+            <!-- Total Reflection (Khó khăn, thuận lợi, bài học) -->
+            <div class="total-reflection scroll-reveal">
+                <div class="reflection-card">
+                    <div class="reflection-card-title">Thuận Lợi</div>
+                    <div class="reflection-card-desc">Được học tập trong môi trường hiện đại của ULIS, tiếp cận sớm với các công cụ AI hàng đầu dưới sự hướng dẫn chi tiết, thực tế của giảng viên giúp tôi dễ dàng định hình lộ trình làm chủ công nghệ học tập.</div>
+                </div>
+                <div class="reflection-card">
+                    <div class="reflection-card-title">Khó Khăn</div>
+                    <div class="reflection-card-desc">Quá trình quản trị công việc nhóm online đôi khi bị quá tải lịch trình. Ngoài ra, thử thách lớn nhất chính là kiểm soát tốt xu hướng ỷ lại vào AI khi nó có khả năng viết lách quá nhanh và tự động hóa cao.</div>
+                </div>
+                <div class="reflection-card">
+                    <div class="reflection-card-title">Bài Học</div>
+                    <div class="reflection-card-desc">AI chỉ thực sự là đòn bẩy khi người sử dụng có tri thức nền vững vàng và tinh thần học hỏi trung thực. Đạo đức liêm chính không phải là rào cản, mà chính là giá trị cốt lõi định hình năng lực thực sự của bạn.</div>
+                </div>
             </div>
-            <div class="reflection-card">
-                <div class="reflection-card-title">Khó Khăn</div>
-                <div class="reflection-card-desc">Việc sắp xếp thời gian làm việc nhóm online đôi khi bị quá tải. Thử thách lớn nhất là vượt qua cám dỗ "lười suy nghĩ" khi AI có khả năng viết lách quá mượt mà và kiểm soát thông tin ảo giác của công nghệ.</div>
-            </div>
-            <div class="reflection-card">
-                <div class="reflection-card-title">Bài Học Kinh Nghiệm</div>
-                <div class="reflection-card-desc">Công nghệ chỉ thực sự mạnh khi người dùng có kiến thức nền tảng vững vàng và thái độ làm việc liêm chính. Kỹ năng số là đặc quyền, nhưng liêm chính đạo đức là tấm khiên bảo vệ giá trị học thuật thực thụ.</div>
-            </div>
-        </div>
 
-        <div class="copyright" style="margin-top: 80px;">
-            <p>© 2026 Nguyễn Thanh Tùng. All rights reserved.</p>
-            <p>ULIS - Đại học Ngoại ngữ - ĐHQGHN</p>
+            <div class="copyright">
+                <p>© 2026 Nguyễn Thanh Tùng. All rights reserved.</p>
+                <p>ULIS - Đại học Ngoại ngữ - ĐHQGHN</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Minimalist Cursor Dot tracking
+        // Minimalist Cursor tracking
         const cursor = document.getElementById('customCursor');
 
         document.addEventListener('mousemove', (e) => {
@@ -1091,7 +1148,7 @@
             cursor.style.top = e.clientY + 'px';
         });
 
-        // Hover animation class trigger
+        // Hover animation trigger class
         const interactiveElements = document.querySelectorAll('a, .project-row, .btn-drive, .slider-btn, .filter-tab, .sandbox-sel-btn, .sandbox-lvl-btn, .info-part-btn');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -1102,7 +1159,7 @@
             });
         });
 
-        // Scroll Reveal observer
+        // Scroll Reveal animation trigger
         const observerOptions = {
             root: null,
             threshold: 0.1,
@@ -1140,21 +1197,20 @@
 
         /* --- JS DATA FOR THE INTERACTIVE ILLUSTRATIONS --- */
 
-        // Slider Data (Bài 1 - 12 Steps)
+        // Step Slider Data (Bài 1 - Đúng 12 bước thực hành chuẩn mực)
         const stepsData = [
-            { title: "Mở File Explorer", desc: "Sử dụng tổ hợp phím nhanh 'Windows + E' để mở trình quản lý tệp tin File Explorer mặc định." },
-            { title: "Truy cập ổ đĩa ngoài hệ thống", desc: "Chọn phân vùng không phải ổ đĩa cài Win (ví dụ ổ D:, E:) hoặc thư mục Documents để thực hiện thao tác an toàn." },
-            { title: "Tạo thư mục mới", desc: "Nhấp chuột phải vào không gian trống, chọn New -> Folder và đặt tên theo cú pháp 'ThucHanh_NguyenThanhTung'." },
+            { title: "Mở File Explorer", desc: "Sử dụng tổ hợp phím tắt nhanh 'Windows + E' hoặc click chọn biểu tượng thư mục màu vàng trên thanh tác vụ." },
+            { title: "Truy cập ổ đĩa/thư mục", desc: "Ở cột bên trái, click vào This PC, sau đó nhấp đúp vào một phân vùng ổ đĩa không chứa hệ điều hành (ví dụ ổ D:, E:) hoặc vào Documents." },
+            { title: "Tạo thư mục mới", desc: "Nhấp chuột phải vào một khoảng trống bất kỳ -> chọn New -> chọn Folder. Thiết lập đặt tên thư mục là 'ThucHanh_NguyenThanhTung' rồi nhấn Enter." },
             { title: "Vào thư mục vừa tạo", desc: "Nhấp đúp chuột trái vào thư mục 'ThucHanh_NguyenThanhTung' vừa tạo để chuẩn bị làm việc bên trong." },
-            { title: "Tạo tệp văn bản mới", desc: "Nhấp chuột phải tại không gian trống bên trong, chọn New -> Text Document để tạo file chữ thô." },
-            { title: "Đặt tên tệp văn bản", desc: "Đặt tên file text mới tạo là 'GhiChu.txt' và nhấn Enter để lưu tên." },
-            { title: "Đổi tên tệp tin", desc: "Nhấp chuột phải vào file 'GhiChu.txt', chọn Rename (hoặc nhấn phím F2) để đổi tên thành 'GhiChuQuanTrong.txt'." },
-            { title: "Tạo thư mục con", desc: "Nhấp chuột phải chọn New -> Folder, đặt tên thư mục con này là 'TaiLieu' nhằm phân cấp dữ liệu." },
-            { title: "Thực hiện sao chép file", desc: "Nhấp chuột phải vào 'GhiChuQuanTrong.txt', chọn Copy, mở thư mục con 'TaiLieu' ra, nhấp chuột phải chọn Paste." },
-            { title: "Di chuyển file khác", desc: "Tạo tệp 'DiChuyen.txt' ở thư mục cha, nhấp chuột phải chọn Cut, mở thư mục 'TaiLieu' ra và nhấp chuột phải chọn Paste." },
-            { title: "Xóa tệp tin đơn giản", desc: "Nhấp chuột phải vào file 'GhiChuQuanTrong.txt' trong thư mục con 'TaiLieu', chọn Delete để đưa file vào Thùng rác." },
-            { title: "Xóa vĩnh viễn file", desc: "Chọn tệp 'DiChuyen.txt' trong thư mục 'TaiLieu', nhấn giữ tổ hợp phím 'Shift + Delete' để xóa vĩnh viễn không qua Thùng rác." },
-            { title: "Khôi phục file từ Thùng rác", desc: "Mở Recycle Bin trên màn hình desktop, nhấp chuột phải vào 'GhiChuQuanTrong.txt' chọn Restore để khôi phục lại vị trí cũ." }
+            { title: "Tạo tệp văn bản mới", desc: "Nhấp chuột phải vào không gian trống bên trong -> chọn New -> chọn Text Document. Tiến hành đặt tên file thô là 'GhiChu.txt' rồi nhấn Enter." },
+            { title: "Đổi tên tệp tin", desc: "Nhấp chuột phải vào tệp tin 'GhiChu.txt', chọn biểu tượng đổi tên Rename (hoặc nhấn phím F2) để đổi tên thành 'GhiChuQuanTrong.txt'." },
+            { title: "Tạo thư mục con", desc: "Trong thư mục chính, nhấp chuột phải -> New -> Folder, tiến hành thiết lập đặt tên thư mục con này là 'TaiLieu'." },
+            { title: "Sao chép tệp tin (Copy & Paste)", desc: "Nhấp chuột phải vào tệp 'GhiChuQuanTrong.txt' chọn Copy. Mở thư mục con 'TaiLieu' ra, nhấp chuột phải chọn Paste để tạo bản sao mới." },
+            { title: "Di chuyển tệp tin (Cut & Paste)", desc: "Quay lại thư mục gốc, tạo tệp 'DiChuyen.txt'. Nhấp chuột phải vào tệp chọn Cut. Mở thư mục 'TaiLieu', nhấp chuột phải chọn Paste để chuyển tệp." },
+            { title: "Xóa tệp tin đơn giản", desc: "Mở thư mục 'TaiLieu', nhấp chuột phải vào tệp 'GhiChuQuanTrong.txt' chọn Delete để chuyển tệp tin tạm thời vào Thùng rác." },
+            { title: "Xóa vĩnh viễn tệp tin", desc: "Chọn tệp 'DiChuyen.txt' trong thư mục 'TaiLieu', nhấn giữ tổ hợp phím 'Shift + Delete' để xóa sạch tệp khỏi bộ nhớ mà không qua Thùng rác." },
+            { title: "Khôi phục từ Thùng rác", desc: "Tìm biểu tượng Recycle Bin trên màn hình nền desktop, nhấp đúp để mở. Click chuột phải vào tệp 'GhiChuQuanTrong.txt' chọn Restore để khôi phục về vị trí ban đầu." }
         ];
         let currentStepIdx = 0;
         function updateStepUI() {
@@ -1171,21 +1227,21 @@
             updateStepUI();
         }
 
-        // Sources Data (Bài 2 - 13 Sources)
+        // Sources Data (Bài 2 - 13 nguồn tin phân tích đối chiếu)
         const sourcesData = [
-            { type: "bao-khoa-hoc", name: "Nguyễn Thị Lan (2023)", source: "Tạp chí Khoa học Ngoại ngữ (số 68)", details: "Khảo sát 150 doanh nghiệp FDI Trung Quốc tại Việt Nam.", year: "2023" },
-            { type: "bao-khoa-hoc", name: "Trần Văn Hùng & Lý Gia Hân (2024)", source: "Tạp chí Ngôn ngữ và Đời sống (số 3)", details: "Phỏng vấn sâu 30 biên phiên dịch viên về kỹ năng thực tế cần có.", year: "2024" },
-            { type: "bao-khoa-hoc", name: "Phạm Minh Tiến (2022)", source: "Kỷ yếu Hội thảo Quốc gia (Đại học Ngoại ngữ - ĐHQGHN)", details: "Đánh giá chất lượng đào tạo tiếng Trung đáp ứng nhu cầu FDI.", year: "2022" },
-            { type: "bao-khoa-hoc", name: "Lê Thị Mai (2023)", source: "Tạp chí Giáo dục (số 512)", details: "Khảo sát sinh viên năm cuối về sự chuẩn bị kỹ năng mềm.", year: "2023" },
-            { type: "bao-khoa-hoc", name: "Hoàng Văn Nam (2021)", source: "Tạp chí Khoa học Đại học Mở TP.HCM", details: "Khảo sát thực trạng việc làm của 200 cử nhân tiếng Trung phía Nam.", year: "2021" },
-            { type: "sach", name: "Viện Nghiên cứu Trung Quốc (2023)", source: "Báo cáo thường niên (NXB Khoa học Xã hội)", details: "Phân tích quan hệ kinh tế vĩ mô Việt Nam - Trung Quốc.", year: "2023" },
-            { type: "sach", name: "Nguyễn Văn Hiệp (2020)", source: "Sách chuyên khảo (NXB ĐHQG Hà Nội)", details: "Mô hình đào tạo nguồn nhân lực ngoại ngữ đáp ứng xã hội.", year: "2020" },
-            { type: "website", name: "Trường Đại học Hoa Sen (2026)", source: "Cổng thông tin tuyển sinh trực tuyến", details: "Giới thiệu chi tiết lộ trình học tập, mức lương ra trường.", year: "2026" },
-            { type: "website", name: "Trường Đại học Công nghệ TP.HCM (2024)", source: "Cổng thông tin hướng nghiệp trực tuyến", details: "Tổng quan ngành Ngôn ngữ Trung Quốc, vị trí việc làm.", year: "2024" },
-            { type: "website", name: "Trường Đại học Đại Nam (2025)", source: "Tin tức tuyển sinh trực tuyến", details: "Độ tin cậy ở mức trung bình, thiếu số liệu khảo sát thực tế.", year: "2025" },
-            { type: "website", name: "ĐH KHXH&NV - ĐHQG TP.HCM (2023)", source: "Chương trình đào tạo Khoa Đông phương", details: "Khung chương trình chuẩn đầu ra rõ ràng, uy tín cao.", year: "2023" },
-            { type: "khac", name: "Bình Minh (2024)", source: "Báo điện tử uy tín (Vnexpress)", details: "Phỏng vấn các chuyên gia đầu ngành về cơ hội việc làm tiếng Trung.", year: "2024" },
-            { type: "khac", name: "Tổng cục Thống kê Việt Nam (2023)", source: "Báo cáo lao động quý IV (Hà Nội)", details: "Số liệu chính thống cấp nhà nước về tình hình việc làm vĩ mô.", year: "2023" }
+            { type: "bao-khoa-hoc", name: "Nguyễn Thị Lan (2023)", source: "Tạp chí Khoa học Ngoại ngữ (số 68)", details: "Khảo sát định lượng quy mô 150 doanh nghiệp FDI Trung Quốc.", year: "2023" },
+            { type: "bao-khoa-hoc", name: "Trần Văn Hùng & Lý Gia Hân (2024)", source: "Tạp chí Ngôn ngữ và Đời sống (số 3)", details: "Phỏng vấn sâu hỗn hợp định lượng định tính 30 chuyên gia biên dịch.", year: "2024" },
+            { type: "bao-khoa-hoc", name: "Phạm Minh Tiến (2022)", source: "Kỷ yếu Hội thảo Quốc gia (Đại học Ngoại ngữ - ĐHQGHN)", details: "Phân tích sâu mô hình đào tạo thực hành tiếng Trung kết hợp doanh nghiệp.", year: "2022" },
+            { type: "bao-khoa-hoc", name: "Lê Thị Mai (2023)", source: "Tạp chí Giáo dục (số 512)", details: "Khảo sát thực trạng trang bị kỹ năng mềm đầu ra cho sinh viên ngoại ngữ.", year: "2023" },
+            { type: "bao-khoa-hoc", name: "Hoàng Văn Nam (2021)", source: "Tạp chí Khoa học Đại học Mở TP.HCM", details: "Mô phỏng khảo sát thực tế tình hình việc làm 200 cử nhân tiếng Trung.", year: "2021" },
+            { type: "sach", name: "Viện Nghiên cứu Trung Quốc (2023)", source: "Báo cáo kinh tế thường niên (NXB Khoa học Xã hội)", details: "Phân tích số liệu giao dịch thương mại vĩ mô Việt Nam - Trung Quốc.", year: "2023" },
+            { type: "sach", name: "Nguyễn Văn Hiệp (2020)", source: "Sách chuyên khảo đào tạo (NXB ĐHQG Hà Nội)", details: "Phân tích lý luận phương pháp đào tạo nhân lực ngoại ngữ đáp ứng xã hội.", year: "2020" },
+            { type: "website", name: "Trường Đại học Hoa Sen (2026)", source: "Website trường đại học chính thống", details: "Giới thiệu chương trình đào tạo, mô tả vị trí việc làm sau tốt nghiệp.", year: "2026" },
+            { type: "website", name: "Trường Đại học Công nghệ TP.HCM (2024)", source: "Website hướng nghiệp trường đại học", details: "Tổng hợp các kỹ năng cần thiết và định hướng mức lương ngành học.", year: "2024" },
+            { type: "website", name: "Trường Đại học Đại Nam (2025)", source: "Cổng thông tin tuyển sinh trực tuyến", details: "Mô tả chương trình đào tạo, mức lương kỳ vọng ngành tiếng Trung.", year: "2025" },
+            { type: "website", name: "ĐH KHXH&NV - ĐHQG TP.HCM (2023)", source: "Cổng thông tin đào tạo Khoa Đông phương", details: "Mô tả chuẩn đầu ra chi tiết chương trình đào tạo chính thống.", year: "2023" },
+            { type: "khac", name: "Bình Minh (2024)", source: "Báo chí chính thống (Vnexpress)", details: "Khảo sát trực quan phỏng vấn chuyên gia đầu ngành về lương ngoại ngữ.", year: "2024" },
+            { type: "khac", name: "Tổng cục Thống kê Việt Nam (2023)", source: "Báo cáo lao động vĩ mô (Hà Nội)", details: "Số liệu chính thống cấp quốc gia phản ánh xu hướng lao động việc làm.", year: "2023" }
         ];
 
         function filterSources(type) {
@@ -1261,10 +1317,10 @@
 
         // Infographic Part Data (Bài 5)
         const infoPartsData = {
-            1: { stat: "46% / 64%", title: "Những con số biết nói", desc: "Thống kê thực tế: 46% Gen Z được chẩn đoán mắc các bệnh lý tâm thần từ bác sĩ chuyên khoa; 64% lo lắng về vấn đề tài chính cá nhân trong bối cảnh lạm phát." },
-            2: { stat: "60% / 86%", title: "Mức độ căng thẳng & lo âu", desc: "60% người trẻ cảm thấy quá tải vì áp lực cuộc sống thường nhật, và tới 86% cảm thấy lo lắng vô hình trước các viễn cảnh tương lai chưa định hình." },
-            3: { stat: "Vòng luẩn quẩn", title: "Cơ chế căng thẳng", desc: "Nguyên nhân (Mạng xã hội, so sánh bản thân, áp lực từ gia đình) dẫn đến Hệ quả tiêu cực (Hội chứng FOMO, kiệt sức tinh thần, trầm cảm và thu mình xã hội)." },
-            4: { stat: "Giải pháp", title: "Chữa lành tích cực", desc: "Đề xuất 3 trụ cột phục hồi cốt lõi: Digital Detox (Hạn chế mạng xã hội), Kết nối thực tế (Dành thời gian cho gia đình, bạn bè) và Hỗ trợ tâm lý khi cần thiết." }
+            1: { stat: "46% / 64%", title: "Những con số biết nói", desc: "Thống kê thực tế: 46% Gen Z được chẩn đoán gặp các vấn đề sức khỏe tâm lý từ bác sĩ chuyên khoa; 64% mệt mỏi trước áp lực tài chính cá nhân và lo ngại về gánh nặng chi tiêu thường nhật." },
+            2: { stat: "60% / 86%", title: "Thước đo sự căng thẳng", desc: "60% người trẻ chịu áp lực quá tải vì việc học tập, thi cử nặng nề; và 86% cảm thấy lo lắng vô hình trước viễn cảnh tương lai tài chính chưa định hình rõ nét." },
+            3: { stat: "Vòng luẩn quẩn", title: "Cơ chế căng thẳng", desc: "Nguyên nhân gốc rễ (Mạng xã hội, so sánh bản thân, áp lực thành công) dẫn đến Hệ quả tiêu cực (Hội chứng FOMO, kiệt sức tinh thần, trầm cảm và xu hướng tự cô lập xã hội)." },
+            4: { stat: "Giải pháp", title: "Phương án phục hồi", desc: "Đề xuất 3 trụ cột cải thiện cốt lõi: Digital Detox (Chủ động hạn chế mạng xã hội), Kết nối đời thực (Dành thời gian chất lượng cho người thân, bạn bè) và Tìm kiếm hỗ trợ tâm lý chuyên khoa." }
         };
 
         function selectInfoPart(partIdx) {
