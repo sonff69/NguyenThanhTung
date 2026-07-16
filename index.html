@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Portfolio | Nguyễn Thanh Tùng</title>
+    <title>Nguyễn Thanh Tùng Portfolio</title>
     <!-- Nhập khẩu Google Fonts hỗ trợ tiếng Việt chuẩn tuyệt đối -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,11 +13,18 @@
         :root {
             --bg-color: #050505;
             --text-color: #ffffff;
-            --accent-color: #dfdbd4; /* Champagne ấm áp và sang trọng */
-            --muted-color: #808080;
+            --accent-color: #dfdbd4; /* Champagne ấm áp và tinh tế */
+            --muted-color: #757575;
             --border-color: rgba(255, 255, 255, 0.08);
             --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             --card-bg: #0c0c0c;
+        }
+
+        /* Reset link mặc định của trình duyệt để loại bỏ gạch chân xanh thô */
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
         }
 
         * {
@@ -48,7 +55,7 @@
             background: var(--accent-color);
         }
 
-        /* Con trỏ tùy biến */
+        /* Con trỏ tối giản */
         .custom-cursor {
             width: 6px;
             height: 6px;
@@ -62,8 +69,8 @@
         }
 
         body.hover-link .custom-cursor {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             background-color: transparent;
             border: 1px solid var(--accent-color);
         }
@@ -72,7 +79,7 @@
         .container-inner {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 120px 8%;
+            padding: 140px 10%;
         }
 
         section {
@@ -86,7 +93,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 30px 8%;
+            padding: 30px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -99,7 +106,6 @@
             font-size: 1.1rem;
             font-weight: 700;
             letter-spacing: 2px;
-            text-decoration: none;
             color: var(--text-color);
         }
 
@@ -111,14 +117,11 @@
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
             font-size: 0.8rem;
             font-weight: 400;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             opacity: 0.5;
-            transition: var(--transition-smooth);
         }
 
         .nav-links a:hover {
@@ -126,25 +129,28 @@
             color: var(--accent-color);
         }
 
+        /* Thiết kế nút Menu GG Drive cực kỳ tối giản */
         .btn-drive {
-            border: 1px solid var(--border-color);
-            padding: 8px 18px;
-            border-radius: 0px;
-            transition: var(--transition-smooth) !important;
+            font-size: 0.8rem !important;
+            font-weight: 500 !important;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 4px;
+            opacity: 0.6;
         }
 
         .btn-drive:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color) !important;
-            border-color: var(--text-color);
-            opacity: 1 !important;
+            opacity: 1;
+            border-bottom-color: var(--accent-color);
+            color: var(--accent-color) !important;
         }
 
-        /* Hero Section */
+        /* Hero Section (Hiển thị 100% độ sáng thực tế và không sử dụng bất kỳ bộ lọc màu nào) */
         .hero {
             height: 100vh;
             width: 100%;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), url('back.jpg') no-repeat center center;
+            background: url('back.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -234,6 +240,24 @@
             margin-bottom: 80px;
             flex-wrap: wrap;
             gap: 40px;
+        }
+
+        /* Nút Xem bài tập trên GG Drive dạng chữ tối giản và tinh tế */
+        .drive-callout {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            padding-bottom: 4px;
+            display: inline-block;
+        }
+
+        .drive-callout:hover {
+            color: var(--text-color);
+            border-bottom-color: var(--text-color);
+            transform: translateY(-1px);
         }
 
         .project-list {
@@ -652,10 +676,8 @@
         }
 
         .footer-nav a {
-            text-decoration: none;
             color: var(--muted-color);
             font-size: 0.9rem;
-            transition: var(--transition-smooth);
         }
 
         .footer-nav a:hover {
@@ -763,7 +785,7 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Hiển thị 100% độ sáng thực tế và không sử dụng bộ lọc mờ nền) -->
     <section class="hero">
         <div class="hero-scroll-indicator">Bắt đầu khám phá</div>
     </section>
@@ -851,7 +873,7 @@
                                 <div class="slider-content">
                                     <div class="slider-step-num" id="sliderStepNum">Bước 1 / 12</div>
                                     <div class="slider-step-title" id="sliderStepTitle">Mở File Explorer</div>
-                                    <div class="slider-step-desc">Mở nhanh trình quản lý tệp File Explorer mặc định bằng cách sử dụng tổ hợp phím Windows + E.</div>
+                                    <div class="slider-step-desc" id="sliderStepDesc">Mở nhanh trình quản lý tệp File Explorer mặc định bằng cách sử dụng tổ hợp phím Windows + E.</div>
                                 </div>
                                 <div class="slider-controls">
                                     <button class="slider-btn" onclick="prevStep()">← Trước</button>
@@ -950,7 +972,7 @@
                     <div class="detail-grid">
                         <div class="detail-meta-list">
                             <div><strong>Mục tiêu học tập:</strong> Thiết lập môi trường làm việc cộng tác trực tuyến mượt mà, khoa học, khắc phục mọi rào cản địa lý và phân bổ thời gian hiệu quả cho tập thể.</div>
-                            <div><strong>Công cụ ứng dụng:</strong> Trello (quản lý phân công công việc), Google Docs (đồng biên tập báo cáo trực tiếp), Google Drive (kho tài nguyên chung), Zalo (thảo luận nhanh), Capcut (biên tập sản phẩm video nhóm).</div>
+                            <div><strong>Công cụ ứng dụng:</strong> Trello (quản lý phân công công việc), Google Docs (đồng biên tập báo cáo trực tiếp), Google Drive (kho tài nguyên chung), Zalo (thảo luận nhóm), Capcut (biên tập sản phẩm video nhóm).</div>
                             <div><strong>Bài học rút ra:</strong> Thành công của làm việc nhóm online không dựa trên cảm xúc cá nhân mà dựa trên quy tắc đồng thuận và tính minh bạch. Việc ghi nhận mốc thời hạn (Due date) cụ thể trên Trello giúp mọi thành viên tự giác chủ động bám sát tiến độ.</div>
                         </div>
                         <div class="detail-content">
@@ -1018,55 +1040,55 @@
 
                             <h4 style="margin-top: 35px;">Kinh Nghiệm Sáng Tạo Thực Tế</h4>
                             <p>Trong quá trình sinh ảnh và bố cục tự động, tôi phát hiện ra Dall-E và Canva AI đôi khi tạo ra những hình ảnh và mẫu thiết kế khá khô khan, giống như các bức ảnh quảng cáo rập khuôn trên mạng. Để khắc phục điều này, tôi đã chủ động tìm kiếm thêm các hình ảnh chân thực, giàu cảm xúc trực tiếp trên Google Images, đồng thời tự tay căn chỉnh lại màu sắc, sắp đặt phông chữ thủ công trên Canva để tác phẩm có sự mượt mà và cá tính riêng biệt.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-row" onclick="toggleDetail('detail-6')">
-                <div class="project-num">06</div>
-                <div class="project-title">Sử Dụng AI Có Trách Nhiệm</div>
-                <div class="project-desc">Nghiên cứu chính sách của UEH để xây dựng bộ quy tắc liêm chính học thuật cá nhân.</div>
-            </div>
-            <div id="detail-6" class="project-detail-panel">
-                <div class="detail-grid">
-                    <div class="detail-meta-list">
-                        <div><strong>Mục tiêu học tập:</strong> Nghiên cứu bối cảnh pháp lý, đạo đức học thuật khi đưa AI vào trường học, từ đó xây dựng cho bản thân một bộ nguyên tắc làm việc liêm chính, tự chịu trách nhiệm trước mọi sản phẩm.</div>
-                        <div><strong>Đối tượng phân tích:</strong> Quyết định số 4002/QĐ-ĐHKT-NCPTGKTC ngày 18/12/2025 của Đại học Kinh tế TP.HCM (UEH) về kiểm soát đạo văn và quy chuẩn sử dụng AI trong học thuật.</div>
-                        <div><strong>Bài học rút ra:</strong> AI là đặc quyền công nghệ hỗ trợ con người, không phải tấm bình phong cho sự lười nhác tư duy. Sự tự trọng của người nghiên cứu nằm ở việc minh bạch khai báo mức độ hỗ trợ từ AI.</div>
-                    </div>
-                    <div class="detail-content">
-                        <h4>Sơ Đồ Phân Loại Quy Định Sử Dụng AI - UEH</h4>
-                        
-                        <!-- Policy Comparator Interactive -->
-                        <div class="policy-comparator">
-                            <div class="policy-box">
-                                <div class="policy-title">AI hỗ trợ kỹ thuật (Assistive AI)</div>
-                                <ul class="policy-list">
-                                    <li>Công cụ soát lỗi chính tả, chỉnh sửa ngữ pháp cơ bản (Grammarly, MS Word).</li>
-                                    <li>Công cụ tra từ điển và hỗ trợ dịch thuật thô (Google Translate).</li>
-                                    <li><strong>Quy chế:</strong> Không bắt buộc phải thực hiện khai báo do đây là các công cụ bổ trợ kỹ thuật, không tự sáng tạo nội dung mới.</li>
-                                </ul>
-                            </div>
-                            <div class="policy-box">
-                                <div class="policy-title">AI tạo sinh nội dung (Generative AI)</div>
-                                <ul class="policy-list">
-                                    <li>Mô hình tự động viết văn bản, sinh hình ảnh, lập trình hoặc tạo số liệu mới (ChatGPT, Claude, Gemini, Midjourney).</li>
-                                    <li><strong>Quy chế:</strong> Bắt buộc phải thực hiện khai báo minh bạch, nêu rõ mục đích, mức độ và phạm vi ứng dụng trong mọi bài báo cáo.</li>
-                                </ul>
-                            </div>
                         </div>
-
-                        <h4 style="margin-top: 35px;">Những Hành Vi Vi Phạm Nghiêm Trọng Cần Tránh</h4>
-                        <p>1. Sao chép trực tiếp nội dung do AI tạo sinh viết ra mà không thực hiện khai báo trung thực.<br>
-                        2. Lạm dụng AI để hoàn thiện toàn bộ hoặc phần lớn sản phẩm học thuật mà thiếu đi sự đóng góp tư duy thực chất của cá nhân.<br>
-                        3. Sử dụng AI tạo sinh để làm sai lệch thông tin nghiên cứu hoặc tự động kiến tạo các nguồn trích dẫn học thuật ảo không tồn tại.</p>
                     </div>
                 </div>
-            </div>
 
+                <!-- Project 6 -->
+                <div class="project-row" onclick="toggleDetail('detail-6')">
+                    <div class="project-num">06</div>
+                    <div class="project-title">Sử Dụng AI Có Trách Nhiệm</div>
+                    <div class="project-desc">Nghiên cứu chính sách của UEH để xây dựng bộ quy tắc liêm chính học thuật cá nhân.</div>
+                </div>
+                <div id="detail-6" class="project-detail-panel">
+                    <div class="detail-grid">
+                        <div class="detail-meta-list">
+                            <div><strong>Mục tiêu học tập:</strong> Nghiên cứu bối cảnh pháp lý, đạo đức học thuật khi đưa AI vào trường học, từ đó xây dựng cho bản thân một bộ nguyên tắc làm việc liêm chính, tự chịu trách nhiệm trước mọi sản phẩm.</div>
+                            <div><strong>Đối tượng phân tích:</strong> Quyết định số 4002/QĐ-ĐHKT-NCPTGKTC ngày 18/12/2025 của Đại học Kinh tế TP.HCM (UEH) về kiểm soát đạo văn và quy chuẩn sử dụng AI trong học thuật.</div>
+                            <div><strong>Bài học rút ra:</strong> AI là đặc quyền công nghệ hỗ trợ con người, không phải tấm bình phong cho sự lười nhác tư duy. Sự tự trọng của người nghiên cứu nằm ở việc minh bạch khai báo mức độ hỗ trợ từ AI.</div>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Sơ Đồ Phân Loại Quy Định Sử Dụng AI - UEH</h4>
+                            
+                            <!-- Policy Comparator Interactive -->
+                            <div class="policy-comparator">
+                                <div class="policy-box">
+                                    <div class="policy-title">AI hỗ trợ kỹ thuật (Assistive AI)</div>
+                                    <ul class="policy-list">
+                                        <li>Công cụ soát lỗi chính tả, chỉnh sửa ngữ pháp cơ bản (Grammarly, MS Word).</li>
+                                        <li>Công cụ tra từ điển và hỗ trợ dịch thuật thô (Google Translate).</li>
+                                        <li><strong>Quy chế:</strong> Không bắt buộc phải thực hiện khai báo do đây là các công cụ bổ trợ kỹ thuật, không tự sáng tạo nội dung mới.</li>
+                                    </ul>
+                                </div>
+                                <div class="policy-box">
+                                    <div class="policy-title">AI tạo sinh nội dung (Generative AI)</div>
+                                    <ul class="policy-list">
+                                        <li>Mô hình tự động viết văn bản, sinh hình ảnh, lập trình hoặc tạo số liệu mới (ChatGPT, Claude, Gemini, Midjourney).</li>
+                                        <li><strong>Quy chế:</strong> Bắt buộc phải thực hiện khai báo minh bạch, nêu rõ mục đích, mức độ và phạm vi ứng dụng trong mọi bài báo cáo.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h4 style="margin-top: 35px;">Những Hành Vi Vi Phạm Nghiêm Trọng Cần Tránh</h4>
+                            <p>1. Sao chép trực tiếp nội dung do AI tạo sinh viết ra mà không thực hiện khai báo trung thực.<br>
+                            2. Lạm dụng AI để hoàn thiện toàn bộ hoặc phần lớn sản phẩm học thuật mà thiếu đi sự đóng góp tư duy thực chất của cá nhân.<br>
+                            3. Sử dụng AI tạo sinh để làm sai lệch thông tin nghiên cứu hoặc tự động kiến tạo các nguồn trích dẫn học thuật ảo không tồn tại.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
     </section>
 
     <!-- Ethical Rules Section -->
@@ -1111,7 +1133,7 @@
                         <li><a href="#about">Về Tôi</a></li>
                         <li><a href="#projects">Sản Phẩm Đã Hoàn Thành</a></li>
                         <li><a href="#rules">Nguyên Tắc Ứng Xử AI</a></li>
-                        <li><a href="https://drive.google.com/drive/folders/1KWKKmy4pLG4ZLZWeO4CHrMnuiM9BLxm_?usp=drive_link" target="_blank" style="color: var(--accent-color); font-weight: 500;">Xem thư mục tài liệu đầy đủ →</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/1KWKKmy4pLG4ZLZWeO4CHrMnuiM9BLxm_?usp=drive_link" target="_blank" class="drive-callout">Xem thư mục tài liệu đầy đủ →</a></li>
                     </ul>
                 </div>
             </div>
@@ -1317,7 +1339,7 @@
 
         // Infographic Part Data (Bài 5)
         const infoPartsData = {
-            1: { stat: "46% / 64%", title: "Những con số biết nói", desc: "Thống kê thực tế: 46% Gen Z được chẩn đoán gặp các vấn đề sức khỏe tâm lý từ bác sĩ chuyên khoa; 64% mệt mỏi trước áp lực tài chính cá nhân và lo ngại về gánh nặng chi tiêu thường nhật." },
+            1: { stat: "46% / 64%", title: "Những con số biết nói", desc: "Trực quan hóa thống kê thực tế: 46% Gen Z được chẩn đoán gặp các vấn đề sức khỏe tâm lý từ bác sĩ chuyên khoa; 64% mệt mỏi trước áp lực tài chính cá nhân và lo ngại về gánh nặng chi tiêu thường nhật." },
             2: { stat: "60% / 86%", title: "Thước đo sự căng thẳng", desc: "60% người trẻ chịu áp lực quá tải vì việc học tập, thi cử nặng nề; và 86% cảm thấy lo lắng vô hình trước viễn cảnh tương lai tài chính chưa định hình rõ nét." },
             3: { stat: "Vòng luẩn quẩn", title: "Cơ chế căng thẳng", desc: "Nguyên nhân gốc rễ (Mạng xã hội, so sánh bản thân, áp lực thành công) dẫn đến Hệ quả tiêu cực (Hội chứng FOMO, kiệt sức tinh thần, trầm cảm và xu hướng tự cô lập xã hội)." },
             4: { stat: "Giải pháp", title: "Phương án phục hồi", desc: "Đề xuất 3 trụ cột cải thiện cốt lõi: Digital Detox (Chủ động hạn chế mạng xã hội), Kết nối đời thực (Dành thời gian chất lượng cho người thân, bạn bè) và Tìm kiếm hỗ trợ tâm lý chuyên khoa." }
