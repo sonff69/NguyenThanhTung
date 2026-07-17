@@ -146,7 +146,7 @@
             color: var(--accent-color) !important;
         }
 
-        /* Hero Section (Hiển thị 100% độ sáng thực tế và không sử dụng bất kỳ bộ lọc màu nào) */
+        /* Hero Section (Hiển thị 100% độ sáng thực tế và không sử dụng bộ lọc mờ nền) */
         .hero {
             height: 100vh;
             width: 100%;
@@ -258,6 +258,51 @@
             color: var(--text-color);
             border-bottom-color: var(--text-color);
             transform: translateY(-1px);
+        }
+
+        /* Nâng cấp phần thông tin cơ bản thành Hộp thông tin tối giản (Minimalist Box Card) */
+        .profile-details-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 0px; /* góc vuông tối giản */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            transition: var(--transition-smooth);
+        }
+
+        .profile-details-card:hover {
+            border-color: rgba(255, 255, 255, 0.18);
+            background-color: #0e0e0e;
+        }
+
+        .detail-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--muted-color);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            line-height: 1.5;
         }
 
         .project-list {
@@ -803,7 +848,8 @@
                     Học phần <strong>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</strong> đã thực sự trang bị cho tôi một nền tảng vững vàng, khoa học và tư duy chuẩn mực để tự tin làm chủ làn sóng công nghệ này một cách minh bạch và tự tôn nhất.
                 </div>
                 
-                <div class="profile-details">
+                <!-- Nâng cấp phần thông tin cơ bản thành Hộp thông tin tối giản (Minimalist Details Card) -->
+                <div class="profile-details-card">
                     <div class="detail-item">
                         <div class="detail-label">Sinh viên thực hiện</div>
                         <div class="detail-value">Nguyễn Thanh Tùng (MSSV: 25041834)</div>
@@ -903,7 +949,7 @@
                             <div class="table-container">
                                 <div class="filter-tabs">
                                     <button class="filter-tab active" onclick="filterSources('all')">Tất cả</button>
-                                    <button class="filter-tab" onclick="filterSources('bao-khoa-hoc')">Bài báo học thuật</button>
+                                    <button class="filter-tab" onclick="filterSources('bao-kho-hoc')">Bài báo học thuật</button>
                                     <button class="filter-tab" onclick="filterSources('sach')">Sách chuyên khảo</button>
                                     <button class="filter-tab" onclick="filterSources('website')">Website đào tạo</button>
                                     <button class="filter-tab" onclick="filterSources('khac')">Báo chí / Khác</button>
